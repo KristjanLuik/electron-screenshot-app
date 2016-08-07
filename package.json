@@ -1,0 +1,24 @@
+{
+  "name": "elec",
+  "version": "1.0.0",
+  "description": "\"# electron-hipchat\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron main.js",
+    "debug": "electron --debug-brk=5858 main.js"
+  },
+  "author": "Kristjan Luik",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KristjanLuik/electron-hipchat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KristjanLuik/electron-hipchat/issues"
+  },
+  "homepage": "https://github.com/KristjanLuik/electron-hipchat#readme",
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "electron-prebuilt": "^1.2.7"
+  }
+}
