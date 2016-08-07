@@ -28,8 +28,6 @@ function handleStream(stream) {
     var vid = document.createElement('video');
     vid.src = URL.createObjectURL(stream);
     vidobjectstream = vid;
-
-
 }
 
 function handleError(e) {
@@ -90,7 +88,9 @@ function animate() {
           //  link.innerHTML = 'mega nuppp';
            // link.href = canvas2.toDataURL();
             if (aa) {
-                window.open(canvas2.toDataURL("image/png"));
+                var ipcRenderer = require("electron").ipcRenderer;
+                ipcRenderer.send('shot',canvas2.toDataURL("image/png"));
+                //window.open(canvas2.toDataURL("image/png"));
                 aa = false;
             }
            // link.download = 'mingipilt.png';
