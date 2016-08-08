@@ -1,7 +1,7 @@
 {
-  "name": "elec",
+  "name": "electron-screenshot-app",
   "version": "1.0.0",
-  "description": "\"# electron-hipchat\"",
+  "description": "electron-screenshot-app",
   "main": "index.js",
   "scripts": {
     "start": "electron main.js",
@@ -11,12 +11,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KristjanLuik/electron-hipchat.git"
+    "url": "git+https://github.com/KristjanLuik/electron-screenshot-app.git"
   },
   "bugs": {
-    "url": "https://github.com/KristjanLuik/electron-hipchat/issues"
+    "url": "https://github.com/KristjanLuik/electron-screenshot-app/issues"
   },
-  "homepage": "https://github.com/KristjanLuik/electron-hipchat#readme",
+  "homepage": "https://github.com/KristjanLuik/electron-screenshot-app#readme",
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "electron-prebuilt": "^1.2.7"
