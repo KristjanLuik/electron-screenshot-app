@@ -24,12 +24,13 @@ ipcMain.on('shot', function (event, arg) {
             console.log(er);
         });
     }
-
+    // Close the drawing window and open main window again.
+    mainWindow.getChildWindows()[0].close();
     mainWindow.show();
 });
 
 exports.takeScreenShot = () => {
     mainWindow.hide();
-    let win = new BrowserWindow({width: 200, height: 200, fullscreen: true, skipTaskbar: true, frame: false, transparent: true});
+    let win = new BrowserWindow({parent: mainWindow,width: 200, height: 200, fullscreen: true, skipTaskbar: true, frame: false, transparent: true});
     win.loadURL(`file://${__dirname}/shot.html`);
 };

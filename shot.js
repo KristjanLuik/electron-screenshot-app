@@ -90,11 +90,8 @@ function animate() {
             if (aa) {
                 var ipcRenderer = require("electron").ipcRenderer;
                 ipcRenderer.send('shot',canvas2.toDataURL("image/png"));
-                //window.open(canvas2.toDataURL("image/png"));
                 aa = false;
             }
-           // link.download = 'mingipilt.png';
-
         }
 
 
