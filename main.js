@@ -9,8 +9,6 @@ var mainWindow;
 app.on('ready', () => {
     let win =  new BrowserWindow({/*width:800, height:600, frame: false, transparent: true*/ center: true});
     win.loadURL(`file://${__dirname}/index.html`);
-
-    //asi = win.webContents;
     mainWindow = win;
     //win.openDevTools();
 
@@ -32,5 +30,5 @@ ipcMain.on('shot', function (event, arg) {
 exports.takeScreenShot = () => {
     mainWindow.hide();
     let win = new BrowserWindow({parent: mainWindow,width: 200, height: 200, fullscreen: true, skipTaskbar: true, frame: false, transparent: true});
-    win.loadURL(`file://${__dirname}/shot.html`);
+    win.loadURL(`file://${__dirname}/app/shot/shot.html`);
 };
