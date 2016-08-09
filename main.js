@@ -7,7 +7,12 @@ var mainWindow;
 
 
 app.on('ready', () => {
-    let win =  new BrowserWindow({/*width:800, height:600, frame: false, transparent: true*/ center: true});
+    const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize;
+    let mainheight = (height/55);
+    let mainwidth = (width/8);
+    console.log(`mainwidth> ${mainwidth}  mainheight> ${mainheight}`);
+    //let win =  new BrowserWindow({width:mainheight, height: mainheight, center: true, frame: false, title: "Screen S#ot",});
+    let win =  new BrowserWindow({width:mainwidth, height:mainwidth, center: true, frame: false, title: "Screen S#ot",});
     win.loadURL(`file://${__dirname}/index.html`);
     mainWindow = win;
     //win.openDevTools();
