@@ -2,9 +2,12 @@
   "name": "electron-screenshot-app",
   "version": "1.0.0",
   "description": "electron-screenshot-app",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron main.js",
+    "start-ln":"electron main.js --enable-transparent-visuals --disable-gpu",
+    "build-ln":"electron-packager . Myapp --platform=linux --arch=x64 --overwrite --prune=true --out=out",
+    "build": "electron-packager . --all",
     "debug": "electron --debug-brk=5858 main.js"
   },
   "author": "Kristjan Luik",
@@ -20,5 +23,11 @@
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "electron-prebuilt": "^1.2.7"
+  },
+  "dependencies": {
+    "electron-json-storage": "^2.0.0",
+    "electron-shortcut-normalizer": "^1.0.0",
+    "glob": "^6.0.4",
+    "highlight.js": "^9.3.0"
   }
 }

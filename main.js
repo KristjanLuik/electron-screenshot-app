@@ -12,7 +12,7 @@ app.on('ready', () => {
     let mainwidth = (width/8);
     console.log(`mainwidth> ${mainwidth}  mainheight> ${mainheight}`);
     //let win =  new BrowserWindow({width:mainheight, height: mainheight, center: true, frame: false, title: "Screen S#ot",});
-    let win =  new BrowserWindow({width:mainwidth, height:mainwidth, center: true, frame: false, title: "Screen S#ot",});
+    let win =  new BrowserWindow({width:mainwidth, height:mainwidth, center: true,/* frame: false,*/ title: "Screen S#ot",});
     win.loadURL(`file://${__dirname}/index.html`);
     mainWindow = win;
     //win.openDevTools();
@@ -34,6 +34,7 @@ ipcMain.on('shot', function (event, arg) {
 
 exports.takeScreenShot = () => {
     mainWindow.hide();
-    let win = new BrowserWindow({parent: mainWindow,width: 200, height: 200, fullscreen: true, skipTaskbar: true, frame: false, transparent: true});
+    let win = new BrowserWindow({parent: mainWindow, fullscreen: true, skipTaskbar: true, frame: false, transparent: true, x:0, y:0, width: 1600, height: 900, title: "Capture",});
+    win.setFullScreen(true);
     win.loadURL(`file://${__dirname}/app/shot/shot.html`);
 };

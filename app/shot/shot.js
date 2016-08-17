@@ -3,9 +3,9 @@ const {desktopCapturer} = require('electron');
 var vidobjectstream;
 desktopCapturer.getSources({types: ['screen']}, (error, sources) => {
     if (error) throw error;
+    console.log(sources[i].name);
     for (let i = 0; i < sources.length; ++i) {
-        console.log(sources[i].name);
-        if (sources[i].name === 'Screen 1') {
+        if (sources[i].name === 'Entire screen' || sources[i].name === 'Screen 1') {
             navigator.webkitGetUserMedia({
                 audio: false,
                 video: {
@@ -84,9 +84,7 @@ function animate() {
             //ctx2.drawImage(vidobjectstream,mouse.firstclick.x, mouse.firstclick.y,(mouse.secondclick.x - mouse.firstclick.x), (mouse.secondclick.y - mouse.firstclick.y) ,0,0,canvas2.width,canvas2.height);
 
             ctx2.drawImage(vidobjectstream,mouse.firstclick.x, mouse.firstclick.y,(mouse.secondclick.x - mouse.firstclick.x), (mouse.secondclick.y - mouse.firstclick.y),0,0, (mouse.secondclick.x - mouse.firstclick.x), (mouse.secondclick.y - mouse.firstclick.y));
-           // debugger;
-          //  link.innerHTML = 'mega nuppp';
-           // link.href = canvas2.toDataURL();
+
             if (aa) {
                 var ipcRenderer = require("electron").ipcRenderer;
                 ipcRenderer.send('shot',canvas2.toDataURL("image/png"));
